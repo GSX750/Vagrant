@@ -1,0 +1,22 @@
+---
+- name: lab1
+  hosts: localhost
+  connection: local
+
+  tasks:
+  - name: mc
+    apt:
+      name: mc
+      state: latest
+  - name: docker
+    apt:
+      name: docker
+      state: latest
+  - name: docker-compose
+    apt:
+      name: docker-compose
+      state: latest
+  - name: prometheus-node-exporter
+    apt:
+      name: prometheus-node-exporter
+      state: latest
