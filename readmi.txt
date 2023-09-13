@@ -1,0 +1,17 @@
+После конфигурирования ВМ заходим с хоста
+http://127.0.0.1:3000
+Логин - admin
+Пароль - admin
+Выбираем:
+Connections
+	Prometheus
+		Prometheus server URL - http://prometheus:9090
+		Save & test
+Dashboards
+	New
+		Import
+			Import via grafana.com - 1860
+				Load
+			Prometheus
+				Prometheus
+				Import
