@@ -7,7 +7,7 @@ Vagrant.configure("2") do |config|
 # Если нету доступа к репозиторую скачиваем от сюда Box https://app.vagrantup.com/generic/boxes/ubuntu2004
 # Теперь нужно скаченный Box добавить в Vagrant выполняем: vagrant box add lab1 file:///d:/path/to/file.box
 # Теперь сконфигурируем ВМ: config.vm.box = "lab1"
-  config.vm.box = "Dima"
+  config.vm.box = "Lab1"
 # Все файлы для автоматической настройки находятся в папке от куда запускаем Vagrant
 # Для того чтобы удобно конфигурировать файлы, пробросим всю текущую папку в ВМ: config.vm.synced_folder
   config.vm.synced_folder ".", "/home/vagrant/code"
