@@ -1,4 +1,4 @@
-version: '3.5'
+version: '3.6'
 services:
   prometheus:
     image: prom/prometheus:latest
@@ -17,11 +17,11 @@ services:
       - default
   grafana:
     image: grafana/grafana
-	#New import
+    #New import
     volumes:
       - /home/vagrant/code/grafana/provisioning/dashboards:/etc/grafana/provisioning/dashboards/
-	  - /home/vagrant/code/grafana/provisioning/datasources:/etc/grafana/provisioning/datasources/
-	#New import
+      - /home/vagrant/code/grafana/provisioning/datasources:/etc/grafana/provisioning/datasources/
+    #New import
     ports:
       - '3000:3000'
 networks:
