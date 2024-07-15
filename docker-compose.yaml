@@ -1,0 +1,32 @@
+version: '3.5'
+services:
+  prometheus:
+    image: prom/prometheus:latest
+    volumes:
+      - /home/vagrant/code:/etc/prometheus/
+    container_name: prometheus
+    hostname: prometheus
+    command:
+      - --config.file=/etc/prometheus/prometheus.yml
+    ports:
+      - 9090:9090
+    restart: unless-stopped
+    environment:
+      TZ: "Europe/Moscow"
+    networks:
+      - default
+  grafana:
+    image: grafana/grafana
+	#New import
+    volumes:
+      - /home/vagrant/code/grafana/provisioning/dashboards:/etc/grafana/provisioning/dashboards/
+	  - /home/vagrant/code/grafana/provisioning/datasources:/etc/grafana/provisioning/datasources/
+	#New import
+    ports:
+      - '3000:3000'
+networks:
+  default:
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.28.0.0/16
